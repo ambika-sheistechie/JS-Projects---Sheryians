@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Remove Friend</title>
+    <style>
+        body{
+            height:100vh;
+            background-color: black;
+            font-family: Inter;
+        }
+
+        .card{
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1{
+            color: green;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .btn{
+            background-color: red;
+            border: none;
+            padding: 15px 20px;
+            max-width: 300px;
+            width: 100%;
+            font-weight: 700;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1556098539-3019e1bdf05e?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+        <h1 class="h1">Friend</h1>
+        <a class="btn">Remove Friend</a>
+    </div>
+    <script>
+        var btn = document.querySelector(".btn");
+        var eh1 = document.querySelector(".h1");
+
+        btn.addEventListener("click", function(){
+            if(eh1.innerHTML == "Friend"){
+                eh1.innerHTML = "Stranger";
+                eh1.style.color = "red";
+                btn.innerHTML = "Add Friend";
+                btn.style.backgroundColor = "green";
+            }
+            
+            else{
+                eh1.innerHTML = "Friend";
+                eh1.style.color = "green";
+                btn.innerHTML = "Remove Friend";
+                btn.style.backgroundColor = "Red";
+            }
+        });
+    </script>
+</body>
+</html>

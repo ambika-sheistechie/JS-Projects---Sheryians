@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Animations</title>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        background:black;
+        height: 100vh;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .elem{
+        border-bottom: solid 10px white;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 20px 20px;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .elem h2{
+        margin:0;
+        font-size: 12vh;
+    }
+
+    .elem img{
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        border-radius: 100px;
+        position: absolute;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="elem">
+            <h2>Jason Liber</h2>
+            <img src="https://images.unsplash.com/photo-1698409704555-e6e46c400523?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8" alt="img">
+        </div>
+        <div class="elem">
+            <h2>Justin Liger</h2>
+            <img src="https://plus.unsplash.com/premium_photo-1698493972995-a9c0300f1b1e?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D" alt="img">
+        </div>
+        <div class="elem">
+            <h2>Killian Majesty</h2>
+            <img src="https://images.unsplash.com/photo-1698616829100-fb3876bb2789?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D" alt="img">
+        </div>
+        <div class="elem">
+            <h2>Brissille Mile</h2>
+            <img src="https://images.unsplash.com/photo-1698635363145-ec65069f6cdd?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D" alt="img">
+        </div>
+    </div>
+    <script>
+        var elem = document.querySelectorAll(".elem");
+
+        elem.forEach(function(val){
+            val.addEventListener("mousemove", function(dets){
+                val.childNodes[3].style.left = dets.clientX+"px";
+                val.childNodes[3].style.top = dets.clientY+"px";
+            });
+            val.addEventListener("mouseenter", function(dets){
+                val.childNodes[3].style.opacity = 1;
+            });
+            val.addEventListener("mouseleave", function(dets){
+                val.childNodes[3].style.opacity = 0;
+            })
+        })
+    </script>
+</body>
+</html>

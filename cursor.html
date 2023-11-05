@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor</title>
+    <style>
+ body{
+            height:95vh;
+            background-color: black;
+            font-family: Inter;
+        }
+        
+        h1{
+            color: white;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: .2ch;
+            font-size: 12vh;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .cursor{
+            height: 40px;
+            width: 40px;
+            background-color: white;
+            position: absolute;
+            border-radius: 100%;
+            mix-blend-mode: difference;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>SHEISTECHIE</h1>
+    <div class="cursor"></div>
+
+    <script>
+        var cursor = document.querySelector(".cursor");
+        var bodyy = document.querySelector("body");
+
+        bodyy.addEventListener("mousemove", (dets) => {
+            setTimeout(() => {
+                cursor.style.left = dets.x+"px";
+                cursor.style.top = dets.y+"px";
+            }, 200);
+        })
+    </script>
+</body>
+</html>
